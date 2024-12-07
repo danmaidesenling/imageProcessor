@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片处理工具</title>
+    <link rel="stylesheet" href="https://unpkg.com/cropperjs@1.5.12/dist/cropper.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="upload-section">
+            <input type="file" id="imageInput" accept="image/*">
+            <div class="preview-container">
+                <img id="previewImage" style="max-width: 100%; display: none;">
+            </div>
+        </div>
+        
+        <div class="controls">
+            <div class="crop-controls">
+                <button id="cropBtn">裁剪</button>
+                <select id="sizeSelect" style="display: none;">
+                    <option value="1">1寸(25×35mm)</option>
+                    <option value="2">2寸(35×49mm)</option>
+                    <option value="2l">大2寸(35×53mm)</option>
+                    <option value="custom">自定义尺寸</option>
+                </select>
+                <div id="customSizeInputs" style="display: none;">
+                    <input type="number" id="customWidth" placeholder="宽度(mm)" min="1">
+                    <span>×</span>
+                    <input type="number" id="customHeight" placeholder="高度(mm)" min="1">
+                    <button id="applyCustomSize">应用</button>
+                </div>
+            </div>
+            <div class="background-controls">
+                <button id="changeBackgroundBtn">更换背景</button>
+                <input type="color" id="backgroundColorPicker" value="#ff0000">
+                <div class="processing-status" style="display: none;">
+                    <div class="spinner"></div>
+                    <span class="status-text">正在处理图片...</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="result-container" style="display: none;">
+            <h3>处理结果</h3>
+            <img id="resultImage">
+            <button id="downloadBtn">下载图片</button>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/cropperjs@1.5.12/dist/cropper.min.js"></script>
+    <script src="script.js"></script>
+    
+    <div id="status" style="position: fixed; bottom: 10px; right: 10px; padding: 10px; background: #f0f0f0;"></div>
+</body>
+</html> 

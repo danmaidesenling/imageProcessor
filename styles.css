@@ -1,0 +1,73 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.preview-container {
+    margin: 20px 0;
+    max-width: 100%;
+    min-height: 300px;
+    border: 2px dashed #ccc;
+}
+
+.controls {
+    margin: 20px 0;
+}
+
+.crop-controls, .background-controls {
+    margin: 10px 0;
+}
+
+#customSizeInputs {
+    margin-top: 10px;
+}
+
+#customSizeInputs input {
+    width: 100px;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+button {
+    padding: 8px 16px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.result-container {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+#resultImage {
+    max-width: 100%;
+    margin: 10px 0;
+}
+
+.processing-status {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.spinner {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.status-text {
+    font-size: 14px;
+    color: #666;
+} 
